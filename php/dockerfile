@@ -1,0 +1,10 @@
+FROM php:8.2-fpm
+
+# Installe les extensions PHP nécessaires
+RUN docker-php-ext-install mysqli pdo pdo_mysql
+
+# Copie des fichiers de l'application dans le conteneur
+COPY . /var/www/html
+
+# Définir le répertoire de travail
+WORKDIR /var/www/html
